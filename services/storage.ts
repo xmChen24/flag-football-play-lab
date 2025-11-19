@@ -1,6 +1,6 @@
 import { Play, PlayerRole } from '../types';
 
-const STORAGE_KEY = 'playmaker_plays_v1';
+const STORAGE_KEY = 'flag_football_play_lab_v1';
 
 const generateId = () => {
     // Simple ID generator if uuid not available, but usually we'd use a lib.

@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Play } from "../types";
 
 // Helper to safely get API Key from various environment locations
@@ -28,7 +28,7 @@ export const getCoachingInsights = async (play: Play): Promise<string> => {
 
   try {
     // Create instance per request to ensure latest config/key and avoid instantiation errors if key is missing initially
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenerativeAI(apiKey);
     
     const prompt = `
       You are an expert flag football coach. Analyze this play:
@@ -45,11 +45,9 @@ export const getCoachingInsights = async (play: Play): Promise<string> => {
       Focus on execution and key reads.
     `;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: prompt,
-    });
-    return response.text || "Could not generate insights.";
+    const model = ai.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
+    const response = await model.generateContent(prompt);
+    return response.response.text() || "Could not generate insights.";
   } catch (error) {
     console.error("Gemini API Error:", error);
     return "An error occurred while contacting the AI Coach.";

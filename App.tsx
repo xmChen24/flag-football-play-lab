@@ -537,8 +537,8 @@ const App: React.FC = () => {
                 <div className="bg-indigo-600 text-white p-1.5 rounded-lg">
                     <LayoutDashboard size={20} />
                 </div>
-                <h1 className="text-lg font-bold tracking-tight text-slate-800 hidden sm:block">PlayMaker <span className="text-indigo-600">5v5</span></h1>
-                <h1 className="text-lg font-bold tracking-tight text-slate-800 sm:hidden">PlayMaker</h1>
+                <h1 className="text-lg font-bold tracking-tight text-slate-800 hidden sm:block">Flag Football <span className="text-indigo-600">Play Lab</span></h1>
+                <h1 className="text-lg font-bold tracking-tight text-slate-800 sm:hidden">Play Lab</h1>
             </div>
         </div>
 
@@ -580,7 +580,7 @@ const App: React.FC = () => {
                       <button onClick={() => { handleExportImage(); setShowMobileMenu(false); }} className="w-full text-left p-3 rounded-lg text-slate-600 font-medium">Download Image</button>
                   )}
                   <div className="border-t my-2"></div>
-                  <p className="text-xs text-slate-400 text-center mt-4">PlayMaker 5v5 MVP</p>
+                  <p className="text-xs text-slate-400 text-center mt-4">Flag Football Play Lab</p>
               </nav>
           </div>
       )}
